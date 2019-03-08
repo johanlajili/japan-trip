@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
 
-export default function Activity({ activityDetails }) {
+export default function Activity ({ activityDetails }) {
   const cover = activityDetails.attachments.find(t => t.id === activityDetails.idAttachmentCover);
   const otherAttachments = activityDetails.attachments.find(t => t !== cover);
-  const location = activityDetails.desc && activityDetails.desc.match(/location:?\s?(http.*)\s?/i);
-  const journey = activityDetails.desc && activityDetails.desc.match(/journey:?\s?(http.*)\s?/i);
+  const location = activityDetails?.desc.match(/location:?\s?(http.*)\s?/i);
+  const journey = activityDetails?.desc.match(/journey:?\s?(http.*)\s?/i);
   return (
     <Card className="activity">
       {cover && <CardMedia className="media" image={cover.url} title={activityDetails.name} />}

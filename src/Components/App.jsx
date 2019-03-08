@@ -38,8 +38,15 @@ function App() {
             </Typography>
           </Toolbar>
         </AppBar>
-        {trello.lists.map((t, i) => (
-          <Day name={t.name} key={t.name} mapLink={mapLinks[i]} cards={trello.cards.filter(c => c.idList === t.id && !c.closed)} />
+        {trello.lists.map((list, i) => (
+          <Day 
+            name={list.name} 
+            key={list.name} 
+            mapLink={mapLinks[i]} 
+            cards={trello.cards.filter(
+              c => c.idList === list.id && !c.closed
+              )} 
+            />
         ))}
       </div>
     </MuiThemeProvider>
