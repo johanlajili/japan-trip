@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import Activity from './Activity';
 import { Typography, Button } from '@material-ui/core';
 export default function Day({ name, cards, mapLink }) {
@@ -24,4 +25,10 @@ export default function Day({ name, cards, mapLink }) {
       </div>
     </div>
   );
+}
+
+Day.propTypes = {
+  name: PropTypes.string,
+  cards: PropTypes.array,
+  mapLink: PropTypes.string,
 }
