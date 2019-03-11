@@ -10,7 +10,7 @@ export default function Activity ({ activityDetails }) {
   const journey = activityDetails?.desc.match(/journey:?\s?(http.*)\s?/i);
   return (
     <Card className="activity">
-      {cover && <CardMedia crossOrigin="anonymous" className="media" image={cover.url} title={activityDetails.name} />}
+      {cover && <CardMedia crossOrigin="anonymous" className="media" image={cover.previewUrl} title={activityDetails.name} />}
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           {activityDetails.name}
