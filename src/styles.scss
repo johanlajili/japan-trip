@@ -42,6 +42,7 @@
   @include flex-center;
   flex-wrap: wrap;
   width: 100%;
+  align-items: stretch
 }
 
 .card h5 {
@@ -70,9 +71,12 @@ i.fas {
   flex: 1;
   margin: 10px;
   margin-top: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .actions {
+  margin-top: auto;
   display: flex;
   justify-content: flex-end;
 }
