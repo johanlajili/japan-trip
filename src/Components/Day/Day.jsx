@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import Activity from './Activity';
-import { Typography, Button } from '@material-ui/core';
+import ReactFitText from 'react-fittext';
+import { Button } from '@material-ui/core';
 export default function Day({ name, cards, mapLink }) {
   return (
     <div className="day">
       <div className="day-title">
-        <div className="text">
-          <i className="fas fa-calendar-day" />
-          <Typography variant="h6">{name}</Typography>
-        </div>
+        <ReactFitText compressor={1.6}>
+          <div className="text">
+            <i className="fas fa-calendar-day" />
+            {name}
+          </div>
+        </ReactFitText>
 
         {mapLink && (
           <Button className="itinerary-button" variant="outlined" color="primary" href={mapLink}>
